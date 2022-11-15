@@ -8,9 +8,8 @@ const flash = require("connect-flash");
 const bodyParser = require("body-parser");
 const errorController = require("./controllers/error");
 const User = require("./models/user");
-
-const MONGODB_URI =
-  "mongodb+srv://trailblazer:trailblazer12345@cluster0.hrngep2.mongodb.net/shop?retryWrites=true&w=majority";
+const ENV_VAR = require('./env');
+const MONGODB_URI = ENV_VAR.MONGODB_API_KEY;
 
 const app = express();
 const store = new MongoDBStore({
