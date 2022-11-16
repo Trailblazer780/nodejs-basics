@@ -157,13 +157,13 @@ exports.postSignup = (req, res, next) => {
       //     subject: "Signup succeeded!",
       //     html: "<h1>You successfully signed up!</h1>",
       //   })
-      .catch(err => {
-        const error = new Error(err);
-        error.httpStatusCode = 500;
-        return next(error);
-      });
+      // .catch(err => {
+      //   const error = new Error(err);
+      //   error.httpStatusCode = 500;
+      //   return next(error);
+      // });
     })
-    // .catch((err) => console.log(err));
+    .catch((err) => console.log(err));
 };
 
 exports.postLogout = (req, res, next) => {
