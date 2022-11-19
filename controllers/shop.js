@@ -4,7 +4,7 @@ const fs = require("fs");
 const path = require("path");
 const ENV_VAR = require('../env');
 const PDFDocument = require("pdfkit");
-const stripe = require("stripe")(ENV_VAR.STRIPE_SECRET_API_KEY);
+const stripe = require("stripe")(process.env.STRIPE_KEY);
 
 const ITEMS_PER_PAGE = 2;
 
