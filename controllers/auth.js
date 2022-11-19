@@ -206,15 +206,15 @@ exports.postReset = (req, res, next) => {
       })
       .then((result) => {
         res.redirect("/");
-        transporter.sendMail({
-          to: req.body.email,
-          from: ENV_VAR.EMAIL,
-          subject: "Password reset",
-          html: `
-          <p>You requested a password reset</p>
-          <p>Click this <a href="http://localhost:3000/reset/${token}">link</a> to set a new password.</p>
-        `,
-        });
+        // transporter.sendMail({
+        //   to: req.body.email,
+        //   from: ENV_VAR.EMAIL,
+        //   subject: "Password reset",
+        //   html: `
+        //   <p>You requested a password reset</p>
+        //   <p>Click this <a href="http://localhost:3000/reset/${token}">link</a> to set a new password.</p>
+        // `,
+        // });
       })
       .catch(err => {
         const error = new Error(err);
